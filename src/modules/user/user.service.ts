@@ -1,10 +1,11 @@
 import { ApplicationError } from "../../utils/ApplicationError";
+import { UserNotFoundError } from "./user.error";
 
 export const fetchUsers = () => {
     const user = {name: 'anjana'}
 
     if(user){
-        throw new ApplicationError('User not found',400)
+        throw new UserNotFoundError()
     }
     return user;
 }

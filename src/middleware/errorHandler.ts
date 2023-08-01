@@ -1,6 +1,7 @@
 import { Request,Response,NextFunction } from "express";
 import { ApplicationError } from "../utils/ApplicationError";
 import { errors, isCelebrateError } from 'celebrate'
+import { StatusCodes } from 'http-status-codes'
 
 const celebrateErrorHandler = errors()
 
@@ -20,7 +21,7 @@ const errorHandler = (error:any, req:Request, res:Response, next:NextFunction) =
     if(error instanceof ApplicationError){
         return res.status(error.statusCode).json(error.message)
     }
-    return res.status(500).json(error)
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json('internal Server error')
 }
 
 
