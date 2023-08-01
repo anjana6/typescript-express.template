@@ -8,3 +8,7 @@ export const fetchUsers = () => {
     }
     return user;
 }
+
+export const createUser = (user:any) => {
+    return user
+}
