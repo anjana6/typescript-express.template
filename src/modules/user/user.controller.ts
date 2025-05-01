@@ -15,7 +15,7 @@ const _handleCreateUser = async(req:Request, res:Response) => {
 }
 
 export const handleFetchUsers = [
-    tryCatch(_handleFetchUsers) 
+    tryCatch(_handleFetchUsers)
 ]
 
 export const handleCreateUser = [

@@ -4,6 +4,7 @@ export const tryCatch = (controller:any) => async (req: Request,res:Response ,ne
     try {
         await controller(req,res)
     } catch (error) {
+        console.log('error', error)
         next(error)
     }
 }
